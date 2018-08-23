@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1/sell?characterEncoding=utf-8&useSSL=false&serverTimeZone=UTC
+
+  jpa:
+    show-sql: true
+
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.1.102
+    port: 6379
+    password:
+server:
+  context-path: /sell
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+#  path: /Library/ApacheTomcat/logs/
+
+
+wechat:
+#  公众平台
+  mpAppId: wx4904f985d4cc7636
+  mpAppSecret: 70abdd3fece4e3b35073c7098734a17e
+#  开放平台
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+  mchId: 1483469312
+  mchKey: 06C56A89949D617xxxxxxxxxxx
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: https://sell.com/pay/notify
+  templateId:
+    orderStatus: 
+projectUrl:
+  weChatMpAuthorize: http://bpy2nc.natappfree.cc
+  weChatOpenAuthorize: http://bpy2nc.natappfree.cc
+  projectUrl: http://bpy2nc.natappfree.cc
+#设置这个包下的日志级别，
+logging:
+  level:
+    com.dream.sell.dataobject.mapper: trace
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
